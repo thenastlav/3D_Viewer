@@ -1,0 +1,32 @@
+\doxysection{affine.\+h}
+\hypertarget{affine_8h_source}{}\label{affine_8h_source}\index{model/affine.h@{model/affine.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_3D\_AFFINE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_3D\_AFFINE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ M\_PI}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ M\_PI\ 3.1415926535897932384626433}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}object.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ MIN\_SCALE\ 0.1f}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ MAX\_SCALE\ 30.0f}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keywordtype}{void}\ scale(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ theta,\ \textcolor{keywordtype}{float}*\ result);}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keywordtype}{void}\ rotate\_x(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ delta,\ \textcolor{keywordtype}{float}*\ result);}
+\DoxyCodeLine{00016\ \textcolor{keywordtype}{void}\ rotate\_y(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ delta,\ \textcolor{keywordtype}{float}*\ result);}
+\DoxyCodeLine{00017\ \textcolor{keywordtype}{void}\ rotate\_z(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ delta,\ \textcolor{keywordtype}{float}*\ result);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keywordtype}{void}\ ortho\_projection(\textcolor{keywordtype}{float}*\ result);}
+\DoxyCodeLine{00020\ \textcolor{keywordtype}{void}\ perspective\_projection(\textcolor{keywordtype}{float}*\ result);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keywordtype}{float}\ radians(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ angle);}
+\DoxyCodeLine{00023\ \textcolor{keywordtype}{void}\ identity\_matrix(\textcolor{keywordtype}{float}*\ result);}
+\DoxyCodeLine{00024\ \textcolor{keywordtype}{void}\ mat4\_multiply(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ b,\ \textcolor{keywordtype}{float}*\ result);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ \_3D\_AFFINE\_H}}
+
+\end{DoxyCode}

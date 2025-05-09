@@ -1,0 +1,61 @@
+\doxysection{widget.\+h}
+\hypertarget{widget_8h_source}{}\label{widget_8h_source}\index{view/widget.h@{view/widget.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ WIDGET\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ WIDGET\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <QColorDialog>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QSlider>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QToolButton>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}glwidget.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ QT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }Ui\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }Widget;}
+\DoxyCodeLine{00013\ \}}
+\DoxyCodeLine{00014\ QT\_END\_NAMESPACE}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }Widget\ :\ \textcolor{keyword}{public}\ QWidget\ \{}
+\DoxyCodeLine{00017\ \ \ Q\_OBJECT}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ Widget(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00021\ \ \ \string~Widget();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ SCALE\_TICK\ =\ 0.02f;}
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ MOVE\_TICK\ =\ 0.0555f;}
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ ROTATE\_TICK\ =\ 0.06283f;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00028\ \ \ \textcolor{keywordtype}{void}\ onChangeFilePath();}
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{void}\ onFileOpenButtonClick();}
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{void}\ onChangeStats();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{void}\ onChangePointStyle();}
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{void}\ onChangeLineStyle();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{void}\ onChangeScaleSlider();}
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{void}\ onChangeMoveSlider();}
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{void}\ onChangeRotateSlider();}
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{void}\ onChangeProjectionType();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{void}\ onScreenshotButtonClick();}
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{void}\ onResetButtonClick();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \textcolor{keywordtype}{void}\ onChangeEdgeColor();}
+\DoxyCodeLine{00044\ \ \ \textcolor{keywordtype}{void}\ onChangeVertexColor();}
+\DoxyCodeLine{00045\ \ \ \textcolor{keywordtype}{void}\ onChangeBackgroundColor();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00048\ \ \ \textcolor{keywordtype}{bool}\ isValidObjFile(\textcolor{keyword}{const}\ QString\ \&path);}
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordtype}{bool}\ isValidImageFile(\textcolor{keyword}{const}\ QString\ \&path,\ std::vector<QString>\ \&ext);}
+\DoxyCodeLine{00050\ \ \ QColor\ chooseColor(QToolButton\ *button,\ \textcolor{keyword}{const}\ QColor\ \&currColor);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ Ui::Widget\ *ui;}
+\DoxyCodeLine{00053\ \ \ \mbox{\hyperlink{class_g_l_widget}{GLWidget}}\ *glWidget;}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ WIDGET\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="fragment.glsl">../shaders/fragment.glsl</file>
+        <file alias="vertex.glsl">../shaders/vertex.glsl</file>
+        <file>img/reset.svg</file>
+        <file>img/delete.svg</file>
+        <file>img/folder_open.svg</file>
+        <file>img/gif_box.svg</file>
+        <file>img/screenshot.svg</file>
+    </qresource>
+</RCC>

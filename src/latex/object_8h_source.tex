@@ -1,0 +1,39 @@
+\doxysection{object.\+h}
+\hypertarget{object_8h_source}{}\label{object_8h_source}\index{model/object.h@{model/object.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_3D\_OBJECT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_3D\_OBJECT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <float.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}parser.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ MAX\_N\_V\ 10000000UL}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ NORM\_RATIO\ 1.0f}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00016\ \ \ \textcolor{keywordtype}{char}*\ name;}
+\DoxyCodeLine{00017\ \ \ \textcolor{keywordtype}{size\_t}\ n\_vertices;}
+\DoxyCodeLine{00018\ \ \ \textcolor{keywordtype}{size\_t}\ n\_faces;}
+\DoxyCodeLine{00019\ \ \ \textcolor{keywordtype}{float}*\ vertices;}
+\DoxyCodeLine{00020\ \ \ \textcolor{keywordtype}{int}*\ faces;}
+\DoxyCodeLine{00021\ \}\ \mbox{\hyperlink{struct_object}{Object}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \mbox{\hyperlink{struct_object}{Object}}*\ create\_obj(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filename);}
+\DoxyCodeLine{00024\ \mbox{\hyperlink{struct_object}{Object}}*\ allocate\_obj(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,\ \textcolor{keywordtype}{size\_t}\ n\_v,\ \textcolor{keywordtype}{size\_t}\ n\_f);}
+\DoxyCodeLine{00025\ \textcolor{keywordtype}{void}\ destroy\_obj(\mbox{\hyperlink{struct_object}{Object}}*\ obj);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keywordtype}{bool}\ try\_parse(FILE*\ fp,\ \mbox{\hyperlink{struct_object}{Object}}*\ obj);}
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{bool}\ parse\_vertex(\mbox{\hyperlink{struct_object}{Object}}*\ obj,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ line,\ \textcolor{keywordtype}{float}*\ max,\ \textcolor{keywordtype}{size\_t}*\ ind);}
+\DoxyCodeLine{00029\ \textcolor{keywordtype}{bool}\ parse\_faces(\mbox{\hyperlink{struct_object}{Object}}*\ obj,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ line,\ \textcolor{keywordtype}{size\_t}*\ ind);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{void}\ normalize(\mbox{\hyperlink{struct_object}{Object}}*\ obj,\ \textcolor{keywordtype}{float}*\ mx);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ \_3D\_OBJECT\_H}}
+
+\end{DoxyCode}

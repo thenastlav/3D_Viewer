@@ -1,0 +1,76 @@
+\doxysection{glwidget.\+h}
+\hypertarget{glwidget_8h_source}{}\label{glwidget_8h_source}\index{view/glwidget.h@{view/glwidget.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GLWIDGET\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GLWIDGET\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QOpenGLFunctions\_3\_3\_Core>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QOpenGLShaderProgram>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QOpenGLWidget>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}../model/object.h"{}}}
+\DoxyCodeLine{00010\ \}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{enum}\ PointStyle\ \{\ NONE\ =\ 0,\ CIRCLE,\ SQUARE\ \};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }GLWidget\ :\ \textcolor{keyword}{public}\ QOpenGLWidget,\ \textcolor{keyword}{protected}\ QOpenGLFunctions\_3\_3\_Core\ \{}
+\DoxyCodeLine{00015\ \ \ Q\_OBJECT}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{explicit}\ GLWidget(QWidget*\ parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00019\ \ \ \string~GLWidget();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ QColor\ getEdgeColor();}
+\DoxyCodeLine{00022\ \ \ QColor\ getVertexColor();}
+\DoxyCodeLine{00023\ \ \ QColor\ getBackgroundColor();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ std::string\ getObjectName();}
+\DoxyCodeLine{00026\ \ \ std::size\_t\ getVerticesAmount();}
+\DoxyCodeLine{00027\ \ \ std::size\_t\ getFacesAmount();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{void}\ resetUniforms();}
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{void}\ loadObjectFromFile(\textcolor{keyword}{const}\ QString\&\ path);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{void}\ setEdgeColor(\textcolor{keyword}{const}\ QColor\&\ color);}
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{void}\ setVertexColor(\textcolor{keyword}{const}\ QColor\&\ color);}
+\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{void}\ setBackgroundColor(\textcolor{keyword}{const}\ QColor\&\ color);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{void}\ setScale(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ val);}
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{void}\ setProjection(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ type);}
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{void}\ move(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ z);}
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{void}\ rotate(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ z);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{void}\ setLineStyle(\textcolor{keywordtype}{bool}\ dashed,\ \textcolor{keywordtype}{float}\ width);}
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{void}\ setPointStyle(\textcolor{keywordtype}{int}\ style,\ \textcolor{keywordtype}{float}\ size);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ signals:}
+\DoxyCodeLine{00045\ \ \ \textcolor{keywordtype}{void}\ loaded();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00048\ \ \ \textcolor{keywordtype}{void}\ initializeGL()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordtype}{void}\ resizeGL(\textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{int}\ h)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00050\ \ \ \textcolor{keywordtype}{void}\ paintGL()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordtype}{void}\ cleanup();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \mbox{\hyperlink{struct_object}{Object}}*\ obj;}
+\DoxyCodeLine{00056\ \ \ GLuint\ VAO,\ VBO,\ EBO;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ GLubyte\ lineWidth;}
+\DoxyCodeLine{00059\ \ \ \textcolor{keywordtype}{bool}\ lineDashed;}
+\DoxyCodeLine{00060\ \ \ \textcolor{keywordtype}{float}\ dashSize,\ gapSize;}
+\DoxyCodeLine{00061\ \ \ \textcolor{keywordtype}{int}\ pointStyle;}
+\DoxyCodeLine{00062\ \ \ GLfloat\ pointSize;}
+\DoxyCodeLine{00063\ \ \ \textcolor{keywordtype}{float}\ bgColor[3],\ eColor[3],\ vColor[3];}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ QOpenGLShaderProgram\ prog;}
+\DoxyCodeLine{00066\ \ \ GLint\ moveLoc,\ scaleLoc,\ transformLoc,\ projectionLoc,\ colorLoc;}
+\DoxyCodeLine{00067\ \ \ GLint\ uDashedLoc,\ uDashSizeLoc,\ uGapSizeLoc,\ uPointSizeLoc;}
+\DoxyCodeLine{00068\ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ GLWIDGET\_H}}
+
+\end{DoxyCode}
